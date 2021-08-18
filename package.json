@@ -1,0 +1,35 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Todolist-Toyproject",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heejin99/Todo-list.git"
+  },
+  "author": "heejin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heejin99/Todo-list/issues"
+  },
+  "homepage": "https://github.com/heejin99/Todo-list#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.1.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "serve-static": "^1.14.1",
+    "url": "^0.11.0"
+  }
+}
