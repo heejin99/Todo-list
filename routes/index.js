@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     var sql = 'SELECT * FROM todo'
     connect.query(sql, (err, rows, fields) => {
         if(err) return res.json({success: false, err})
-        res.render('index.ejs', {list: rows});
+        res.render('index.ejs', {list: rows})
     })
 })
 

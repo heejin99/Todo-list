@@ -1,44 +1,9 @@
-<!-- <html>
-    <head>
-        <meta charset="utf-8">
-        <title>게시글</title>
-    </head>
-    <body>
-        <h2>게시글 리스트</h2>
-        <table todo ='1'>
-            <colgroup>
-                <col width='60'><col width='200'><col width='100'>
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>글번호</th>
-                    <th>글제목</th>
-                    <th>작성자</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for(i = 0; i < list.length; i++) { %>
-                <tr>
-                    <div style="text-align:center">
-
-                        <td><%=i+1 %></td>
-                        <td><%=list[i].title %></td>
-                        <td><%=list[i].id %></td>
-                    </div>
-                </tr>
-                <% } %>
-            </tbody>
-        </table todo='1'>
-        
-        <button onclick="location.href='../write'">글쓰기</button>
-    </body>
-</html> -->
-<!-- 합쳐지고 최소화된 최신 CSS -->
+<html>
 <html>
     <head>
         <title>Heetodo</title>
         
-        <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- 1 -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -68,9 +33,6 @@
                       <h6 class="mb-3">HEETODO</h6>
           
                       <form class="d-flex justify-content-center align-items-center mb-4" action='/writeTodo' method='post'>
-                        <!-- <form action='/writeTodo' method='post'>
-                        
-                        </form> -->
                         <div class="form-outline flex-fill"> 
                             <input type="text" name="content" id="form1" class="form-control" placeholder="새로운 할 일"/>
                         </div>
