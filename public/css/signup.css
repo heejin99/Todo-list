@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+  
+a {
+    text-decoration: none;
+    color: black;
+}
+  
+li {
+    list-style: none;
+}
+  
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+}
+  
+.signup {
+    width: 30%;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+h2 {
+    color: rgb(47, 80, 115);
+    font-size: 2em;
+}
+
+.signup_id {
+    margin-top: 20px;
+    width: 80%;
+}
+  
+.signup_id input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+  
+.signup_pw {
+    margin-top: 20px;
+    width: 80%;
+}
+  
+.signup_pw input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+.signup_name {
+    margin-top: 20px;
+    width: 80%;
+}
+  
+.signup_name input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+.submit {
+    margin-top: 50px;
+    width: 80%;
+}
+.submit input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 40px;
+    background: linear-gradient(to left, rgb(47, 80, 115), rgb(126, 146, 166));
+    color: white;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
