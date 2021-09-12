@@ -11,8 +11,7 @@
 </head>
 <body>
     <% if(user.loggedin){ %>
-        <h1>로그인 성공</h1>
-        <h2><a href="/api/logout">Logout</a></h2>
+        <meta http-equiv="refresh" content="0; url=/api/main" />
     <% } else {%>
         <form method="post" action="/api/login">
             <div class="wrap">
@@ -43,4 +42,11 @@
         
     <% } %>
 </body>
+<script>
+    function check() {
+        if (loginSuccess) {
+
+        }
+    }
+</script>
 </html>

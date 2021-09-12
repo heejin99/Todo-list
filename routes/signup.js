@@ -20,7 +20,8 @@ router.post('/signup', (req, res) => {
             // 아이디와 비밀번호 db에 추가
             db.query('INSERT INTO user(`user_id`,`password`,`name`) VALUES (?,?,?)', param, (err, row) => {
                 if(err) return res.json({success: false, err})
-                res.status(200).json({success: true})
+                // res.status(200).json({success: true})
+                res.redirect('/api/login')
                 // console.log('회원가입 성공')
             })
         })
