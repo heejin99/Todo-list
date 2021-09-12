@@ -26,13 +26,19 @@ app.use(session({
     resave: false, // 수정이 되지 않아도 재저장 여부
     saveUninitialized: false, 
     cookie: { // 쿠키 지속
-        maxAge: 60*60*24
+        maxAge: 600000
+        // 60*60*24
     },
 }))
 // use routes
-app.use("/api", require('./routes/main'))
+app.use("/api", require('./routes/todo'))
 app.use("/api", require('./routes/signup'))
 app.use("/api", require('./routes/login'))
+app.use("/api", require('./routes/hidden'))
+app.use("/api", require('./routes/main'))
+
+app.use("/api", require('./routes/diary'))
+app.use('/images', express.static('images'));
 
 app.listen(port, () => {
     console.log(`Server Listening on ${port}`)
