@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diary</title>
+        <link rel="stylesheet" href="/css/diary.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <% if(!user.loggedin){ %>
+            <meta http-equiv="refresh" content="0; url=/api" />
+        <% } else {%>
+            <header>
+                <h1><a href="/api">Home</a></h1>
+                <nav>
+                    <ul class="left">
+                        <li><a href="#">Diary</a></li>
+                        <li><a href="/api/list">Todo</a></li>
+                    </ul>
+                    <ul class="right">
+                        <% for(i = 0; i < you.length; i++) { %>
+                            <li><a href="#"><%=you[i].name %>님&nbsp&nbsp&nbsp</a>
+                                <ol class="drop">
+                                    <li><a href="/api/logout">Logout</a></li>
+                                </ol>
+                            </li>
+                        <% } %>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content">
+                <img src="#" alt="#" />
+                <h3>일기</h3>
+            </div>
+            <% } %>
+    </body>
+</html>

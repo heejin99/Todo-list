@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jua', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 50px;
+    float: left;
+    margin: 1% 5% 0 2%;
+}
+
+body{
+    background-color: #EEEEEE;
+    margin: 0;
+    color: black;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+header{
+    color:  black;
+    background-color: #7E92A6;
+    padding: 20px;
+    height: 120px;
+    line-height: 65px;
+}
+
+nav{
+    margin: -4% 0 0 10%;
+    padding: 0;
+    list-style-type: none;
+    background-color: red;
+    font-size: 30px;
+}
+.left {
+    line-height: 90px;
+    float: left;
+}
+.left li{
+    display: inline;
+    margin: 0 20px 0 0 ;
+}
+
+.right {
+    line-height: 90px;
+    float: right;
+}
+.right li{
+    display: inline;
+    position: relative;
+    margin: 0 20px 0 0 ;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+    /* top: 110%; */
+    text-align: center;
+    width: 110%;
+    background-color: red;
+    font-size: 25px;
+    border-radius: 10px;
+    top: 110%; left: 50%; margin-left: -70px;
+}
+
+.drop > li{
+    width: 100%;
+    height: 180%;
+}
+
+.drop >li >a{
+    margin: 17%;
+}
+
+.right >li:hover>a{
+    color: white;
+}
+
+.right >li:hover>.drop{
+    display: block;
+}
+
+.right >li:hover>.drop a:hover{
+    color: white;
+}
+
+.right .drop::after { 
+    content: ""; 
+    position: absolute; 
+    bottom: 100%; 
+    left: 50%; 
+    margin-left: -10px; 
+    border-width: 10px; 
+    border-style: solid; 
+    border-color: transparent transparent red transparent; 
+}
+
+.content {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
