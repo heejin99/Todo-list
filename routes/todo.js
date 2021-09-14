@@ -4,13 +4,24 @@ const router = express.Router()
 const db = require('../config/db')
 
 router.get('/list', (req, res) => {
-    var sql = 'SELECT * FROM todo'
-    db.query('SELECT * FROM user', (err, row) => {
-        db.query(sql, (errr, rows) => {
-            if(err) return res.json({success: false, errr})
-            res.render('todo.ejs', {you: row, list: rows, user:req.session})
+    if(req.session.loggedin){
+        db.query('SELECT * FROM user', (error, data) => {
+  
+            db.query('SELECT * FROM todo', (err, row) => {
+                if(err) return res.json({success: false, err})
+                res.render('todo',{
+                    loggedin : req.session.loggedin,
+                    name : req.session.name,
+                    list: row
+                });
+            })
+
         })
-    })
+    }else{
+        res.render('main',{
+            loggedin : false
+        });
+    }
 })
 
 router.get('/write', (req, res) => {

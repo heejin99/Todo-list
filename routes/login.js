@@ -11,9 +11,9 @@ router.get('/login', (req, res)=>{
 })
 // 로그인
 router.post('/login', (req, res) => {
-    const param = [req.body.user_id, req.body.password]
-
-    db.query('SELECT * FROM user WHERE user_id=?', param[0], (err, row) => {
+    const param = [req.body.id, req.body.password]
+    
+    db.query('SELECT * FROM user WHERE id=?', param[0], (err, row) => {
         if(err) return res.json({success: false, err})
         if(row.length > 0) { // ID exists
             bcrypt.compare(param[1], row[0].password, (error, result) => {
@@ -27,8 +27,16 @@ router.post('/login', (req, res) => {
                 // 비밀번호 일치
                 req.session.loggedin = true;
                 req.session.id = param[0]
+                req.session.name = row[0].name
+                req.session.save(() => {
+                    res.render('main', {
+                        name: row[0].name,
+                        id: row[0].id,
+                        loggedin: true
+                    })
+                })
                 // res.status(200).json({loginSuccess: true}) 
-                res.redirect('/api')
+                // res.redirect('/api')
             })
         } else { // ID not exists
             return res.json({loginSuccess: false, message: 'ID not exists'})

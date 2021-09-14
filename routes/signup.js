@@ -11,18 +11,23 @@ router.get('/signup', (req, res)=>{
 })
 // 회원가입
 router.post('/signup', (req, res) => {
-    var param = [req.body.user_id, req.body.password, req.body.name]
+    var param = [req.body.id, req.body.password, req.body.name]
 
     
         // 비밀번호 암호화
         bcrypt.hash(param[1], saltRounds, (error, hash) => {
             param[1] = hash
-            // 아이디와 비밀번호 db에 추가
-            db.query('INSERT INTO user(`user_id`,`password`,`name`) VALUES (?,?,?)', param, (err, row) => {
-                if(err) return res.json({success: false, err})
-                // res.status(200).json({success: true})
-                res.redirect('/api/login')
-                // console.log('회원가입 성공')
+            db.query('SELECT * FROM user where id=?', param[0], (err, data) => {
+                if (data.length == 0) {
+                    // 아이디와 비밀번호 db에 추가
+                    db.query('INSERT INTO user(`id`,`password`,`name`) VALUES (?,?,?)', param, (err, row) => {
+                        if(err) return res.json({success: false, err})
+                        res.redirect('/api/login')
+                    })
+                } else {
+                    res.send('<script>alert("아이디 존재");</script>')
+                    res.redirect('/api/login')
+                }
             })
         })
         

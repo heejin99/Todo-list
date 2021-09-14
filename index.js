@@ -24,10 +24,11 @@ app.use(session({
     key: "user", // 저장될 키 값
     secret: "secret", // 서명에 필요한 값
     resave: false, // 수정이 되지 않아도 재저장 여부
-    saveUninitialized: false, 
-    cookie: { // 쿠키 지속
-        maxAge: 600000
-        // 60*60*24
+    saveUninitialized: true, 
+    cookie: {
+        httpOnly: true,
+        secure: false,
+        maxAge: 24*60*60
     },
 }))
 // use routes
