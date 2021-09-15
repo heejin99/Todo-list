@@ -35,9 +35,8 @@ app.use(session({
 app.use("/api", require('./routes/todo'))
 app.use("/api", require('./routes/signup'))
 app.use("/api", require('./routes/login'))
-app.use("/api", require('./routes/hidden'))
 app.use("/api", require('./routes/main'))
-
+app.use("/api", require('./routes/forgot'))
 app.use("/api", require('./routes/diary'))
 app.use('/images', express.static('images'));
 

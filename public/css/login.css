@@ -99,3 +99,11 @@ h2 {
     font-size: 1.2em;
     letter-spacing: 2px;
 }
+
+.login_not:hover > a{
+    color: rgb(126, 146, 166);
+}
+
+.forgot:hover > a{
+    color: rgb(126, 146, 166);
+}

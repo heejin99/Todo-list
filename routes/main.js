@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/main', (req, res) => {
+router.get('/', (req, res) => {
     if(req.session.loggedin){
         res.render('main',{
             loggedin : req.session.loggedin,

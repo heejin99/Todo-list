@@ -19,10 +19,8 @@ router.post('/login', (req, res) => {
             bcrypt.compare(param[1], row[0].password, (error, result) => {
                 // 비밀번호 불일치
                 if(!result) {
-                    return res.json({
-                        loginSuccess: false, 
-                        message: 'Wrong pw'
-                    })
+                    return res.send('<script>alert("비밀번호가 틀렸습니다.다시 입력하세요");location.href="/api/login"</script>')
+                    
                 }
                 // 비밀번호 일치
                 req.session.loggedin = true;
@@ -35,11 +33,9 @@ router.post('/login', (req, res) => {
                         loggedin: true
                     })
                 })
-                // res.status(200).json({loginSuccess: true}) 
-                // res.redirect('/api')
             })
         } else { // ID not exists
-            return res.json({loginSuccess: false, message: 'ID not exists'})
+            return res.send('<script>alert("아이디가 존재하지 않습니다.회원가입을 먼저 진행해주세요.");location.href="/api/signup"</script>')
         }
     })
 })
