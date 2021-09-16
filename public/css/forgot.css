@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jua', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 40px;
+    float: left;
+    margin: 10px 3% 0 3%;
+}
+h1:hover > a{
+    color:white;
+}
+body{
+    background-color: #EEEEEE;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+header{
+    color:  black;
+    background-color: #7E92A6;
+    padding: 20px;
+    height: 120px;
+    line-height: 65px;
+}
+
+nav{
+    margin: -4% 0 0 10%;
+    padding: 0;
+    list-style-type: none;
+    background-color: red;
+    font-size: 30px;
+}
+.left {
+    line-height: 90px;
+    float: left;
+}
+.left li{
+    display: inline;
+    margin: 0 20px 0 0 ;
+}
+
+.left >li:hover>a{
+    color: white;
+}
+.right {
+    line-height: 90px;
+    float: right;
+}
+.right li{
+    display: inline;
+    position: relative;
+    margin: 0 20px 0 0 ;
+}
+
+section {
+    display: inline;
+}
+
+h2 {
+    font-size: 45px;
+    margin: 50px 0 50px -20%;
+    line-height: 80px;
+    text-align: center;
+}
+.idbox {
+    border: solid 5px #7E92A6;
+    width: 800px;
+    margin-top: 100px;
+    margin-left: 110px;
+    text-align: center;
+    float: left;
+}
+
+.pwbox {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 60px;
+    width: 800px;
+    border: solid 5px #7E92A6;
+    float: left;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+  
+.login_id {
+    margin-left: 70px;
+    margin-top: 20px;
+    width: 80%;
+}
+  
+.login_id input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+  
+.login_email {
+    margin-left: 70px;
+    margin-top: 20px;
+    width: 80%;
+}
+  
+.login_email input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+} 
+.login_name {
+    margin-left: 70px;
+    margin-top: 20px;
+    width: 80%;
+}
+  
+.login_name input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+  
+  
+.forgot {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.forgot h2 {
+    margin: 0 0px 10px 0px;
+}
+.submit {
+    margin-top: 50px;
+    margin-left: 70px;
+    width: 80%;
+}
+.submit input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 40px;
+    background: linear-gradient(to left, rgb(47, 80, 115), rgb(126, 146, 166));
+    color: white;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+    /* top: 110%; */
+    text-align: center;
+    width: 110%;
+    background-color: red;
+    font-size: 25px;
+    border-radius: 10px;
+    top: 110%; left: 50%; margin-left: -70px;
+}
+
+.drop > li{
+    width: 100%;
+    height: 180%;
+}
+
+.drop >li >a{
+    margin: 17%;
+}
+
+.right >li:hover>a{
+    color: white;
+}
+
+.right >li:hover>.drop{
+    display: block;
+}
+
+.right >li:hover>.drop a:hover{
+    color: white;
+}
+
+.right .drop::after { 
+    content: ""; 
+    position: absolute; 
+    bottom: 100%; 
+    left: 50%; 
+    margin-left: -10px; 
+    border-width: 10px; 
+    border-style: solid; 
+    border-color: transparent transparent red transparent; 
+}

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forgot</title>
+        <link rel="stylesheet" href="/css/forgot.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1><a href="/api">Home</a></h1>
+            <nav>
+                <ul class="left">
+                    <li><a href="/api/list">Todo</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="/api/login">Login</a></li>
+                    <li><a href="/api/signup">Join</a></li>
+                </ul>   
+            </nav>
+        </header>
+        <div class="idbox" d-flex justify-content-center align-items-center h-300>
+            <div class="forgot">
+                <h2>아이디 찾기</h2>
+                <form method="post" action="/api/forgot/id">
+                    <div class="login_email">
+                        <h4>Email</h4>
+                        <input type="email" name="email" id="" placeholder="Email">
+                    </div>
+                    <div class="login_name">
+                        <h4>Name</h4>
+                        <input type="text" name="name" id="" placeholder="Name">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Submit" onclick='/api/login'>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="pwbox"  d-flex justify-content-center align-items-center h-300>
+            <div class="forgot">
+                <h2>비밀번호 찾기</h2>
+                <form method="post" action="/api/forgot/pw">
+                    <div class="login_id">
+                        <h4>ID</h4>
+                        <input type="id" name="id" id="" placeholder="ID">
+                    </div>
+                    <div class="login_name">
+                        <h4>Name</h4>
+                        <input type="text" name="name" id="" placeholder="Name">
+                    </div>
+                    <div class="login_email">
+                        <h4>Email</h4>
+                        <input type="email" name="email" id="" placeholder="Email">
+                    </div>
+                                
+                    <div class="submit">
+                        <input type="submit" value="Submit" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
