@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>개인정보 수정</title>
+        <link rel="stylesheet" href="/css/update_user.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1><a href="/api">Home</a></h1>
+            <nav>
+                <ul class="left">
+                    <li><a href="/api/list">Todo</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="#"><%= name %>님&nbsp&nbsp&nbsp</a>
+                        <ol class="drop">
+                            <li><a href="/api/update_user">개인정보 수정</a></li>
+                            <li><a href="/api/logout">Logout</a></li>
+                        </ol>
+                    </li>
+                </ul>   
+            </nav>
+        </header>
+        <% if(!loggedin){ %>
+            <meta http-equiv="refresh" content="0; url=/api" />
+        <% } else {%>
+        <div class="box" d-flex justify-content-center align-items-center h-300>
+            <div class="update">
+                <h2>개인정보 수정</h2>
+                <form method="post" action="/api/update_user">
+                    <div class="update_id">
+                        <h4>ID: <%= id %>님</h4>
+                    </div>
+                    <div class="update_name">
+                        <h4>Name: <%= name %> </h4>
+                        <!-- <input type="text" name="named" id="" placeholder=""> -->
+                    </div>
+                    <div class="update_pw">
+                        <h4>비밀번호 변경</h4>
+                        <input type="password" name="originalpw" id="" placeholder="현재 비밀번호">
+                        <input type="password" name="changepw" id="" placeholder="새 비밀번호">
+                        <input type="password" name="changepw_ok" id="" placeholder="현재 비밀번호">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% } %>
+    </body>
+</html>
