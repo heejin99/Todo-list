@@ -6,11 +6,11 @@ const db = require('../config/db')
 const bcrypt = require('bcrypt')
 const saltRounds = 10
 
-router.get('/signup', (req, res)=>{
+router.get('/', (req, res)=>{
     res.render('signup.ejs')
 })
 // 회원가입
-router.post('/signup', (req, res) => {
+router.post('/', (req, res) => {
     var param = [req.body.id, req.body.password, req.body.name, req.body.email]
         // 비밀번호 암호화
         bcrypt.hash(param[1], saltRounds, (error, hash) => {

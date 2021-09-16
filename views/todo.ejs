@@ -17,7 +17,6 @@
             <h1><a href="/api">Home</a></h1>
             <nav>
                 <ul class="left">
-                    <li><a href="/api/diary">Diary</a></li>
                     <li><a href="/api/list">Todo</a></li>
                 </ul>
                 <ul class="right">
@@ -27,6 +26,7 @@
                 <% } else { %>
                     <li><a href="#"><%=name %>님&nbsp&nbsp&nbsp</a>
                         <ol class="drop">
+                            <li><a href="/api/update_user">개인정보 수정</a></li>
                             <li><a href="/api/logout">Logout</a></li>
                         </ol>
                     </li>

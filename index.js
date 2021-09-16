@@ -33,11 +33,11 @@ app.use(session({
 }))
 // use routes
 app.use("/api", require('./routes/todo'))
-app.use("/api", require('./routes/signup'))
+app.use("/api/signup", require('./routes/signup'))
 app.use("/api", require('./routes/login'))
 app.use("/api", require('./routes/main'))
-app.use("/api", require('./routes/forgot'))
-app.use("/api", require('./routes/diary'))
+app.use("/api/forgot", require('./routes/forgot'))
+app.use("/api/update_user", require('./routes/update_user'))
 app.use('/images', express.static('images'));
 
 app.listen(port, () => {
