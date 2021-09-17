@@ -159,7 +159,7 @@ img {
         font-size: 25px;
     }
     .left {
-        line-height: 75px;
+        line-height: 90px;
         float: left;
     }
     .left li{
@@ -171,7 +171,7 @@ img {
         color: white;
     }
     .right {
-        line-height: 70px;
+        line-height: 90px;
         float: right;
     }
     .right li{
@@ -179,7 +179,6 @@ img {
         position: relative;
         margin: 0 5px 0 0 ;
     }
-    
     section {
         display: inline;
     }
@@ -200,49 +199,49 @@ img {
         height: auto;
     }
     
-    .drop {
-        display: none;
-        position: absolute;
-        /* top: 110%; */
-        text-align: center;
-        width: 200%;
-        background-color: red;
-        font-size: 25px;
-        border-radius: 10px;
-        top: 110%; left: 6%; margin-left: -90px;
-    }
-    
-    .drop > li{
-        width: 100%;
-        margin-left: 1%;
-        margin-right: -3%;
-        height: 180%;
-    }
-    
-    .drop >li >a{
-        margin: 13%;
-    }
-    
-    .right >li:hover>a{
-        color: white;
-    }
-    
-    .right >li:hover>.drop{
-        display: block;
-    }
-    
-    .right >li:hover>.drop a:hover{
-        color: white;
-    }
-    
-    .right .drop::after { 
-        content: ""; 
-        position: absolute; 
-        bottom: 100%; 
-        left: 50%; 
-        margin-left: -10px; 
-        border-width: 10px; 
-        border-style: solid; 
-        border-color: transparent transparent red transparent; 
-    }
+.drop {
+    display: none;
+    position: absolute;
+    /* top: 110%; */
+    text-align: center;
+    width: 200%;
+    background-color: red;
+    font-size: 20px;
+    border-radius: 10px;
+    top: 110%; left: 6%; margin-left: -85px;
+}
+
+.drop > li{
+    width: 100%;
+    margin-left: 1%;
+    margin-right: -3%;
+    height: 100%;
+}
+
+.drop >li >a{
+    margin: 12%;
+}
+
+.right >li:hover>a{
+    color: white;
+}
+
+.right >li:hover>.drop{
+    display: block;
+}
+
+.right >li:hover>.drop a:hover{
+    color: white;
+}
+
+.right .drop::after { 
+    content: ""; 
+    position: absolute; 
+    bottom: 100%; 
+    left: 70%; 
+    margin-left: -10px; 
+    border-width: 10px; 
+    border-style: solid; 
+    border-color: transparent transparent red transparent; 
+}
   }
