@@ -9,7 +9,6 @@ const db = require('../config/db')
 router.get('/', (req, res) => {
     db.query('SELECT * FROM user',(err, row) => {
         if(err) return res.json({success: false, err})
-        console.log(req.session.id)
         res.render('update_user', {
             loggedin : req.session.loggedin,
             name : req.session.name,
