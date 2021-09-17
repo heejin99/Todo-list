@@ -66,7 +66,7 @@ section {
 
 h2 {
     font-size: 45px;
-    margin: 300px 0 0 -40%;
+    margin: 13% 0 0 -50%;
     line-height: 80px;
     text-align: center;
 }
@@ -75,7 +75,8 @@ h2 {
 img {
     border: solid 5px black;
     position: absolute;
-    right: 13%;
+    width: 40%;
+    right: 18%;
     top: 250px;
 }
 
@@ -124,3 +125,124 @@ img {
     border-style: solid; 
     border-color: transparent transparent red transparent; 
 }
+
+@media ( max-width: 480px ) {
+    h1 {
+        font-size: 40px;
+        float: left;
+        margin: 4px 1% 0 0;
+    }
+    h1:hover > a{
+        color:white;
+    }
+    body{
+        background-color: #EEEEEE;
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+    }
+    
+    header{
+        color:  black;
+        background-color: #7E92A6;
+        padding: 20px;
+        height: 100px;
+        line-height: 65px;
+    }
+    
+    nav{
+        margin: -4% 0 0 10%;
+        padding: 0;
+        list-style-type: none;
+        background-color: red;
+        font-size: 25px;
+    }
+    .left {
+        line-height: 75px;
+        float: left;
+    }
+    .left li{
+        display: inline;
+        margin: 0 10px 0 10px ;
+    }
+    
+    .left >li:hover>a{
+        color: white;
+    }
+    .right {
+        line-height: 70px;
+        float: right;
+    }
+    .right li{
+        display: inline;
+        position: relative;
+        margin: 0 5px 0 0 ;
+    }
+    
+    section {
+        display: inline;
+    }
+    
+    h2 {
+        font-size: 45px;
+        margin: 25% 0 0 0;
+        line-height: 80px;
+        text-align: center;
+    }
+    
+    img {
+        border: solid 5px black;
+        position: absolute;
+        right: 11px;
+        top: 400px;
+        width: 350px;
+        height: auto;
+    }
+    
+    .drop {
+        display: none;
+        position: absolute;
+        /* top: 110%; */
+        text-align: center;
+        width: 200%;
+        background-color: red;
+        font-size: 25px;
+        border-radius: 10px;
+        top: 110%; left: 6%; margin-left: -90px;
+    }
+    
+    .drop > li{
+        width: 100%;
+        margin-left: 1%;
+        margin-right: -3%;
+        height: 180%;
+    }
+    
+    .drop >li >a{
+        margin: 13%;
+    }
+    
+    .right >li:hover>a{
+        color: white;
+    }
+    
+    .right >li:hover>.drop{
+        display: block;
+    }
+    
+    .right >li:hover>.drop a:hover{
+        color: white;
+    }
+    
+    .right .drop::after { 
+        content: ""; 
+        position: absolute; 
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 10px; 
+        border-style: solid; 
+        border-color: transparent transparent red transparent; 
+    }
+  }

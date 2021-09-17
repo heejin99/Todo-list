@@ -111,3 +111,19 @@ h2 {
     font-size: 1.2em;
     letter-spacing: 2px;
 }
+
+
+@media ( max-width: 480px ) {
+    
+    .signup {
+        width: 70%;
+        height: 600px;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}

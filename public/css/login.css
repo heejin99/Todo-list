@@ -107,3 +107,31 @@ h2 {
 .forgot:hover > a{
     color: rgb(126, 146, 166);
 }
+
+
+@media ( max-width: 480px ) {
+     
+    .login {
+        width: 80%;
+        height: 600px;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+ 
+    .login_etc {
+        padding: 10px;
+        width: 80%;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+    .forgot {
+        margin-left: 28%;
+    }
+}
