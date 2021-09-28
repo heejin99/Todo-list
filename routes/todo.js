@@ -5,14 +5,16 @@ const db = require('../config/db')
 
 router.get('/list', (req, res) => {
     if(req.session.loggedin){
-        db.query('SELECT * FROM user', (error, data) => {
-  
+        db.query('SELECT * FROM todo', (error, data) => {
+            
             db.query('SELECT * FROM todo', (err, row) => {
+                
                 if(err) return res.json({success: false, err})
                 res.render('todo',{
                     loggedin : req.session.loggedin,
                     name : req.session.name,
-                    list: row
+                    list: row,
+                    user: req.session.user
                 });
             })
 
@@ -31,10 +33,13 @@ router.get('/write', (req, res) => {
 
 router.post('/writeTodo', (req,res) => {
     var param = [req.body.content]
-    db.query('INSERT INTO todo (`content`, `status`) VALUES(?,0);', param, (err) => {
-        if(err) return res.json({success: false, err})
-        res.redirect('/api/list')
+    db.query('SELECT * FROM todo', (err, row) => {
+        db.query('INSERT INTO todo (`content`, `userId`, `status`) VALUES(?,?,0);', [param[0], req.session.user], (err) => {
+            if(err) return res.json({success: false, err})
+            res.redirect('/api/list')
+        })
     })
+    
 })
 
 router.get('/doneTodo/:todo_id', (req, res) => {

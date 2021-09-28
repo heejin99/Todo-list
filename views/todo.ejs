@@ -41,16 +41,17 @@
                     <input type="text" name="content" placeholder="해야할 일을 입력하세요">
                     <button type="submit" class="submit" onclick="location.href='../write'">추가</button>
                     <ul class="list-group mb-0">
-                      
                         <% for(i = 0; i < list.length; i++) { %>
-                            <% if (list[i].status == 0) { %>
-                                <li class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-0">
-                                    <div class="d-flex align-items-center">
-                                        <%=list[i].content %>
-                                        <button type="button" class="done" onclick="location.href='doneTodo/<%=list[i].todo_id%>'">O</button>
-                                        <button type="button" class="delete" onclick="location.href='deleteTodo/<%=list[i].todo_id%>'">X</button>
-                                    </div>
-                                </li>
+                            <% if (list[i].userId == user) {%>
+                                <% if (list[i].status == 0) { %>
+                                    <li class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-0">
+                                        <div class="d-flex align-items-center">
+                                            <%=list[i].content %>
+                                            <button type="button" class="done" onclick="location.href='doneTodo/<%=list[i].todo_id%>'">O</button>
+                                            <button type="button" class="delete" onclick="location.href='deleteTodo/<%=list[i].todo_id%>'">X</button>
+                                        </div>
+                                    </li>
+                                <% } %>
                             <% } %>
                         <% } %>
                     </ul>
@@ -64,13 +65,15 @@
                 <form method="post" action="/api/writeTodo">
                     <ul class="list-group mb-0">
                         <% for(i = 0; i < list.length; i++) { %>
-                            <% if (list[i].status == 1) { %>
-                                <li class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-0">
-                                    <div class="d-flex align-items-center">
-                                        <%=list[i].content %>
-                                        <button type="button" class="delete" onclick="location.href='deleteTodo/<%=list[i].todo_id%>'">X</button>
-                                    </div>
-                                </li>
+                            <% if (list[i].userId == user) {%>
+                                <% if (list[i].status == 1) { %>
+                                    <li class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-0">
+                                        <div class="d-flex align-items-center">
+                                            <%=list[i].content %>
+                                            <button type="button" class="delete" onclick="location.href='deleteTodo/<%=list[i].todo_id%>'">X</button>
+                                        </div>
+                                    </li>
+                                <% } %>
                             <% } %>
                         <% } %>
                     </ul>

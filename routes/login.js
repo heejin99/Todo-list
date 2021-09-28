@@ -26,10 +26,12 @@ router.post('/login', (req, res) => {
                 req.session.loggedin = true;
                 req.session.id = param[0]
                 req.session.name = row[0].name
+                req.session.user = row[0].user_id
                 req.session.save(() => {
                     res.render('main', {
                         name: row[0].name,
                         id: row[0].id,
+                        user: row[0].user_id,
                         loggedin: true
                     })
                 })
