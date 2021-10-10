@@ -45,7 +45,7 @@ router.post('/pw', (req, res) => {
         if(err) return res.json({searchsuccess: false, err})
         if(row.length > 0) {
             const emailOptions = { 
-                from: "wkdgmlwls18@gmail.com", 
+                from: process.env.Mail_USER, 
                 to: row[0].email, 
                 subject: "[HeeTodo] 임시 비밀번호 재발급", 
                 html: "<h1>HeeTodo에서 새로운 비밀번호를 알려드립니다.</h1> <h2> 비밀번호 : " + randomPW + "</h2>"
@@ -54,11 +54,11 @@ router.post('/pw', (req, res) => {
             bcrypt.hash(randomPW, saltRounds, (error, hash) => {
                 randomPW = hash
                 db.query('update user set password=? where id=?', [randomPW, row[0].id], (errorr) => {
-                    if(err) return res.json({success:false, errorr})
+                    if(err) return res.json({updatesuccess:false, errorr})
                 })
             })
             smtpTransport.sendMail(emailOptions, (error, response) => { 
-                if (error) return res.json({success: false, err})
+                if (error) return res.json({emailsuccess: false, err})
                 else {
                     res.render('forgot_pw');
                 } smtpTransport.close(); 
