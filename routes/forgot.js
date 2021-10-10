@@ -58,7 +58,7 @@ router.post('/pw', (req, res) => {
                 })
             })
             smtpTransport.sendMail(emailOptions, (error, response) => { 
-                if (error) return res.json({emailsuccess: false, err})
+                if (error) return res.json({emailsuccess: false, error})
                 else {
                     res.render('forgot_pw');
                 } smtpTransport.close(); 
