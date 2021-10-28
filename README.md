@@ -2,7 +2,7 @@
 ***
 - 투두리스트 홈페이지 [접속](https://heetodo.ml/api)
 - 현재 aws 과금 문제로 잠정 중단 해놓았습니다.
-- 이용하고 싶으시면 [이메일](wkdgmlwls30@naver.com)로 연락 주세요.
+- 이용하고 싶으시면 이메일(wkdgmlwls30@naver.com)로 연락 주세요.
 
 ## 목적 & 용도
 ***
